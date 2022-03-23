@@ -32,11 +32,8 @@ import time
 #########################################################
 #                   Your Code Goes Below                #
 #########################################################
-darty = turtle.Turtle()
-darty.shape("turtle")
-darty.color("purple")
-darty.speed(1)
-darty.setworldcoordinates(-1, -1, 2.5, 2.5)
+darty=turtle.Turtle()
+window=turtle.Screen()
 
 def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
   darty.penup()
@@ -45,7 +42,6 @@ def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
   for i in [1, 1, 1, 1]:
     darty.forward(2)
     darty.left(90)
-
 
 def drawLine(myturtle, x_start=0, y_start=0, x_end=0, y_end=0):
   darty.penup()
@@ -57,7 +53,32 @@ def drawCircle(myturtle=None, radius=0):
   darty.goto(0,-1)
   darty.circle(radius)
 
+def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=1):
+  distance = darty.distance(1,1)
+  if distance > 1:
+    return False
+  else:
+    return True
   
+def setUpDartboard():
+  window= turtle.Screen()
+  window.mode('world')
+  turtle.setworldcoordinates(-1, -1, 2.5, 2.5)
+  drawSquare(darty, 2, -1, 1)
+  drawLine(darty, -1, 0, 1, 0)
+  drawLine(darty, 0, -1, 0, 1)
+  drawCircle(darty, 1)
+
+def throwDart(myturtle=None):
+  x_coord= random.uniform(-1, 1)
+  y_coord= random.uniform(-1, 1)
+  darty.penup()
+  darty.goto(x_coord, y_coord)
+  darty.dot(2, "red")
+  
+setUpDartboard()
+
+
 
     
 #########################################################
