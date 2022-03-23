@@ -53,11 +53,13 @@ def drawCircle(myturtle=None, radius=0):
   darty.goto(0,-1)
   darty.circle(radius)
 
-def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=1):
+def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
   distance = darty.distance(1,1)
   if distance > 1:
+    darty.dot(2, "red")
     return False
   else:
+    darty.dot(2, "green")
     return True
   
 def setUpDartboard():
@@ -78,7 +80,8 @@ def throwDart(myturtle=None):
   
 setUpDartboard()
 
-
+def playDarts(myturtle=None):
+  
 
     
 #########################################################
