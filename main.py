@@ -28,11 +28,31 @@ import turtle
 import random
 import time
 
+
 #########################################################
 #                   Your Code Goes Below                #
 #########################################################
+def setUpDartboard(myscreen=None, myturtle=None):
+    def drawSquare():
+        for sides in [4]:
+            darty.forward(1)
+            darty.left(90)
 
+    def drawLine(darty=None, x_start=0, y_start=0, x_end=0, y_end=0):
+        darty.up(1)
+        darty.down(2)
+        darty.up(1)
+        darty.right(1)
+        darty.left(2)
 
+    def drawCircle(darty=None, radius=0):
+        darty.circle(1)
+
+    darty.setworldcoordinates(-50, -10, 50, 10)
+
+def isInCircle(darty=None, circle_center_x=0, circle_center_y=0, radius=0):
+
+  
 
 #########################################################
 #         Do not alter any code below here              #
@@ -50,7 +70,7 @@ def main():
     #Create window, turtle, set up window as dartboard
     window = turtle.Screen()
     darty = turtle.Turtle()
-    darty.speed(0) # as fast as it will go!
+    darty.speed(0)  # as fast as it will go!
     setUpDartboard(window, darty)
 
     # Loop for 10 darts to test your code
@@ -66,18 +86,23 @@ def main():
     print("=========== Part C ===========")
     darty.clear()
     setUpDartboard(window, darty)
-    
+
     # Includes the following code in order to update animation periodically
     # instead of for each throw (saves LOTS of time):
     BATCH_OF_DARTS = 5000
     window.tracer(BATCH_OF_DARTS)
 
     # Conduct simulation and print result
-    number_darts = int(input("\nPlease input the number of darts to be thrown in the simulation:  "))
+    number_darts = int(
+        input(
+            "\nPlease input the number of darts to be thrown in the simulation:  "
+        ))
     approx_pi = montePi(darty, number_darts)
-    print("\nThe estimation of pi using "+str(number_darts)+" virtual darts is " + str(approx_pi))
+    print("\nThe estimation of pi using " + str(number_darts) +
+          " virtual darts is " + str(approx_pi))
     print("\tPart C Complete...")
     # Don't hide or mess with window while it's 'working'
     window.exitonclick()
+
 
 main()
