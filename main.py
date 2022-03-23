@@ -32,28 +32,34 @@ import time
 #########################################################
 #                   Your Code Goes Below                #
 #########################################################
-def setUpDartboard(myscreen=None, myturtle=None):
-    def drawSquare():
-        for sides in [4]:
-            darty.forward(1)
-            darty.left(90)
+darty = turtle.Turtle()
+darty.shape("turtle")
+darty.color("purple")
+darty.speed(1)
+darty.setworldcoordinates(-1, -1, 2.5, 2.5)
 
-    def drawLine(darty=None, x_start=0, y_start=0, x_end=0, y_end=0):
-        darty.up(1)
-        darty.down(2)
-        darty.up(1)
-        darty.right(1)
-        darty.left(2)
+def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
+  darty.penup()
+  darty.goto(-1, -1)
+  darty.pendown()
+  for i in [1, 1, 1, 1]:
+    darty.forward(2)
+    darty.left(90)
 
-    def drawCircle(darty=None, radius=0):
-        darty.circle(1)
 
-    darty.setworldcoordinates(-50, -10, 50, 10)
+def drawLine(myturtle, x_start=0, y_start=0, x_end=0, y_end=0):
+  darty.penup()
+  darty.goto(x_start,y_start)
+  darty.pendown()
+  darty.goto(x_end, y_end)
 
-def isInCircle(darty=None, circle_center_x=0, circle_center_y=0, radius=0):
+def drawCircle(myturtle=None, radius=0):
+  darty.goto(0,-1)
+  darty.circle(radius)
 
   
 
+    
 #########################################################
 #         Do not alter any code below here              #
 #       Your code must work with the main proivided     #
