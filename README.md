@@ -8,18 +8,18 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+ Made a program that plays a game of darts. Part A draws a dartboard and throws testing darts. Part B plays a game of darts between 2 players and keeps track of the score. It is also announces the score of the game and who won. Part C of the game runs a Monte Carlo simulation and prints the estimation of pi based on the amount of darts thrown and the amount of darts that landed on the dartboard. 
 
 ## GRACE DAYS
-Grace days used for this assignment: < # >
+Grace days used for this assignment: 1
 
-Grace days remaining: < # >/5
+Grace days remaining: 4/5
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+ None.
 
 ## REFERENCES:
- < List any outside resources used >
+ None.
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+ None. 
