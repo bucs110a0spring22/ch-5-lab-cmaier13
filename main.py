@@ -33,7 +33,6 @@ import time
 #                   Your Code Goes Below                #
 #########################################################
 darty=turtle.Turtle()
-window=turtle.Screen()
 
 def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
   darty.penup()
@@ -54,7 +53,7 @@ def drawCircle(myturtle=None, radius=0):
   darty.circle(radius)
 
 def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
-  distance = darty.distance(1,1)
+  distance = darty.distance(0,0)
   if distance > 1:
     darty.dot(2, "red")
     return False
@@ -62,28 +61,51 @@ def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
     darty.dot(2, "green")
     return True
   
+
 def setUpDartboard():
-  window= turtle.Screen()
-  window.mode('world')
+  wn= turtle.Screen()
+  wn.mode('world')
   turtle.setworldcoordinates(-1, -1, 2.5, 2.5)
   drawSquare(darty, 2, -1, 1)
   drawLine(darty, -1, 0, 1, 0)
   drawLine(darty, 0, -1, 0, 1)
   drawCircle(darty, 1)
-
+  
+setUpDartboard()
+    
 def throwDart(myturtle=None):
   x_coord= random.uniform(-1, 1)
   y_coord= random.uniform(-1, 1)
   darty.penup()
   darty.goto(x_coord, y_coord)
   darty.dot(2, "red")
-  
-setUpDartboard()
 
 def playDarts(myturtle=None):
-  
+  p1point = 0
+  p2point = 0
+  for i in range(10):
+    throwDart(darty)
+    if isInCircle(darty,0,0,1):
+      p1point = p1point + 1
+    else:
+      p1point = p1point
+    throwDart(darty)
+    if isInCircle(darty,0,0,1):
+      p2point = p2point + 1
+    else:
+      p2point = p2point
+  print("player 1 score:", p1point)
+  print("player 2 score:", p2point)
+  if p1point > p2point:
+    print("player one wins!")
+  elif p1point == p2point:
+    print("the game ended in a tie!")
+  else:
+    print("player two wins!")
 
-    
+
+
+  
 #########################################################
 #         Do not alter any code below here              #
 #       Your code must work with the main proivided     #
