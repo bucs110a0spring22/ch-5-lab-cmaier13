@@ -32,7 +32,7 @@ import time
 #########################################################
 #                   Your Code Goes Below                #
 #########################################################
-darty=turtle.Turtle()
+darty = turtle.Turtle()
 
 def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
   darty.penup()
@@ -61,8 +61,8 @@ def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
     darty.dot(2, "green")
     return True
   
-
-def setUpDartboard():
+def setUpDartboard(window=None, myturtle=None):
+  darty = turtle.Turtle()
   wn= turtle.Screen()
   wn.mode('world')
   turtle.setworldcoordinates(-1, -1, 2.5, 2.5)
@@ -70,15 +70,13 @@ def setUpDartboard():
   drawLine(darty, -1, 0, 1, 0)
   drawLine(darty, 0, -1, 0, 1)
   drawCircle(darty, 1)
-  
-setUpDartboard()
     
 def throwDart(myturtle=None):
   x_coord= random.uniform(-1, 1)
   y_coord= random.uniform(-1, 1)
   darty.penup()
   darty.goto(x_coord, y_coord)
-  darty.dot(2, "red")
+  darty.dot(2, "blue")
 
 def playDarts(myturtle=None):
   p1point = 0
@@ -103,7 +101,18 @@ def playDarts(myturtle=None):
   else:
     print("player two wins!")
 
-
+def montePi(myturtle=None, number_darts=0):
+  inside_count = 0
+  for i in range(number_darts):
+    throwDart(darty)
+    if isInCircle(darty, 0,0,1):
+      inside_count = inside_count + 1
+    else:
+      inside_count = inside_count
+  approxpt1 = (inside_count / number_darts)
+  approxofpi = approxpt1 * 4 
+  return approxofpi
+  
 
   
 #########################################################
