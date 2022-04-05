@@ -63,12 +63,17 @@ def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
   if distance > 1:
     darty.dot(2, "red")
     return False
-  else:
+  elif 0.4 < distance < 1 :
     darty.dot(2, "green")
     return True
-
-()
-
+  else:
+    darty.shape("circle")
+    darty.color("purple")
+    darty.stamp()
+    darty.shape("classic")
+    darty.color("black")
+    return True
+    
 '''takes a turtle, x and y values of the center of the circle, and a radius and returns either True or False depending on the placement of the dart'''
 
 def setUpDartboard(window=None, myturtle=None):
@@ -81,9 +86,8 @@ def setUpDartboard(window=None, myturtle=None):
   drawLine(darty, 0, -1, 0, 1)
   drawCircle(darty, 1)
   drawCircle(darty, 0.4)
-  
 
-'''takes the arguements window type and turtle and draws a dartboard'''
+'''takes the arguments window type and turtle and draws a dartboard'''
     
 def throwDart(myturtle=None):
   x_coord= random.uniform(-1, 1)
@@ -116,6 +120,7 @@ def playDarts(myturtle=None):
     print("the game ended in a tie!")
   else:
     print("player two wins!")
+  
 
 '''takes a turtle argument and plays a game of darts'''
 
