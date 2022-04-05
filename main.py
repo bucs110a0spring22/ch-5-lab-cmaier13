@@ -33,6 +33,7 @@ import time
 #                   Your Code Goes Below                #
 #########################################################
 darty = turtle.Turtle()
+printer = turtle.Turtle()
 
 def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
   darty.penup()
@@ -77,6 +78,16 @@ def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
     
 '''takes a turtle, x and y values of the center of the circle, and a radius and returns either True or False depending on the placement of the dart'''
 
+def printCount (start_x, start_y, myturtle=None):
+  printer = turtle.Turtle()
+  printer.goto(start_x, start_y)
+  printer.write(("Player 1 Score: ", p1point), True, align=center)
+  printer.goto(start_x, start_y + 5)
+  printer.write(("Player 2 Score: ", p2point), True, align=center)
+
+'''takes the turtle, a starting x value, and a starting y value and writes the players scores above the dartboard'''
+
+
 def setUpDartboard(window=None, myturtle=None):
   darty = turtle.Turtle()
   wn= turtle.Screen()
@@ -117,13 +128,21 @@ def playDarts(myturtle=None):
   print("player 2 score:", p2point)
   if p1point > p2point:
     print("player one wins!")
+    drawStar(printer)
   elif p1point == p2point:
     print("the game ended in a tie!")
   else:
     print("player two wins!")
-  
-
+    drawStar(printer)
 '''takes a turtle argument and plays a game of darts'''
+
+def drawStar(myturtle=None):
+  printer.goto(0,1)
+  for i in ["pink", "blue", "yellow", "red", "purple"]:
+    printer.color(i)
+    printer.forward(3)
+    printer.right(144)
+    
 
 def montePi(myturtle=None, number_darts=0):
   inside_count = 0

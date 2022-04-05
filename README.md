@@ -1,4 +1,29 @@
 #### CS 110
+# Midterm - Python Programming
+
+***
+
+_Replace anything surrounded by the `< >` symbols._
+
+## SUMMARY:
+What did you clean up?:
+
+Summary of function(s) added:
+
+Summary of Feature Added:
+
+## KNOWN BUGS AND INCOMPLETE PARTS:
+ < What parts of the project you were not able to complete >
+
+## REFERENCES:
+ < List any outside resources used >
+
+## MISCELLANEOUS COMMENTS:
+ < Anything you would like the grader to know >
+
+
+ 
+#### CS 110
 # Chapter 5 - Lab - Selection
 
 ### [Assignment Description](https://docs.google.com/document/d/1QfPsRfo1kZoQw4p0DhjxZskNfE0eLAV6Z6SgPSleDM4/edit?usp=sharing)
