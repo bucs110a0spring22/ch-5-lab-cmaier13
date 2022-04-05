@@ -72,6 +72,7 @@ def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
     darty.stamp()
     darty.shape("classic")
     darty.color("black")
+    print("So close to the bullseye!")
     return True
     
 '''takes a turtle, x and y values of the center of the circle, and a radius and returns either True or False depending on the placement of the dart'''
