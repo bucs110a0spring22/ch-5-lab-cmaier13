@@ -41,6 +41,8 @@ def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
   for i in [1, 1, 1, 1]:
     darty.forward(2)
     darty.left(90)
+    
+'''Takes a turtle value, width, top left x value and top left y value, and draws a square with these parameters'''
 
 def drawLine(myturtle, x_start=0, y_start=0, x_end=0, y_end=0):
   darty.penup()
@@ -48,9 +50,13 @@ def drawLine(myturtle, x_start=0, y_start=0, x_end=0, y_end=0):
   darty.pendown()
   darty.goto(x_end, y_end)
 
+'''takes arguements turtle, starting x and y position, and ending x and y position, and draws a line'''
+
 def drawCircle(myturtle=None, radius=0):
   darty.goto(0,-1)
   darty.circle(radius)
+
+'''Takes a turtle and radius parameter and draws a Circle'''
 
 def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
   distance = darty.distance(0,0)
@@ -60,7 +66,9 @@ def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
   else:
     darty.dot(2, "green")
     return True
-  
+
+'''takes a turtle, x and y values of the center of the circle, and a radius and returns either True or False depending on the placement of the dart'''
+
 def setUpDartboard(window=None, myturtle=None):
   darty = turtle.Turtle()
   wn= turtle.Screen()
@@ -70,6 +78,8 @@ def setUpDartboard(window=None, myturtle=None):
   drawLine(darty, -1, 0, 1, 0)
   drawLine(darty, 0, -1, 0, 1)
   drawCircle(darty, 1)
+
+'''takes the arguements window type and turtle and draws a dartboard'''
     
 def throwDart(myturtle=None):
   x_coord= random.uniform(-1, 1)
@@ -77,6 +87,8 @@ def throwDart(myturtle=None):
   darty.penup()
   darty.goto(x_coord, y_coord)
   darty.dot(2, "blue")
+
+'''takes a turtle argument and uses it to throw the darts at the dartboard'''
 
 def playDarts(myturtle=None):
   p1point = 0
@@ -101,6 +113,8 @@ def playDarts(myturtle=None):
   else:
     print("player two wins!")
 
+'''takes a turtle argument and plays a game of darts'''
+
 def montePi(myturtle=None, number_darts=0):
   inside_count = 0
   for i in range(number_darts):
@@ -112,7 +126,8 @@ def montePi(myturtle=None, number_darts=0):
   approxpt1 = (inside_count / number_darts)
   approxofpi = approxpt1 * 4 
   return approxofpi
-  
+
+'''Takes a turtle argument and a number of darts and returns an approximation of pi'''
 
   
 #########################################################
