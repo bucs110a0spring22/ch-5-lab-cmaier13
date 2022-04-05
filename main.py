@@ -53,8 +53,8 @@ def drawLine(myturtle, x_start=0, y_start=0, x_end=0, y_end=0):
 '''takes arguements turtle, starting x and y position, and ending x and y position, and draws a line'''
 
 def drawCircle(myturtle=None, radius=0):
-  darty.goto(0,-1)
-  darty.circle(radius)
+    darty.goto(0,-radius)
+    darty.circle(radius)
 
 '''Takes a turtle and radius parameter and draws a Circle'''
 
@@ -67,6 +67,8 @@ def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
     darty.dot(2, "green")
     return True
 
+()
+
 '''takes a turtle, x and y values of the center of the circle, and a radius and returns either True or False depending on the placement of the dart'''
 
 def setUpDartboard(window=None, myturtle=None):
@@ -78,6 +80,8 @@ def setUpDartboard(window=None, myturtle=None):
   drawLine(darty, -1, 0, 1, 0)
   drawLine(darty, 0, -1, 0, 1)
   drawCircle(darty, 1)
+  drawCircle(darty, 0.4)
+  
 
 '''takes the arguements window type and turtle and draws a dartboard'''
     
