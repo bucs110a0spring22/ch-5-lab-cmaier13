@@ -6,20 +6,20 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
-What did you clean up?:
+What did you clean up?: Added docstrings and fixed arguments. 
 
-Summary of function(s) added:
+Summary of function(s) added: The function added is called drawStar and is implemented in the playDarts function. This function calls for a star (with a different color for each side) to be drawn if a player wins the dart game. If there is a tie, no star is drawn. 
 
-Summary of Feature Added:
+Summary of Feature Added: The first feature added is a second smaller circle within the original circle. When a dart lands inside this smaller circle, the turtle shape is changed to a circle and the color purple and it leaves a stamp where the dart hit. Along with this, a message stating "So close to the bullseye!" is printed for the user to see. The second feature added was the drawStar function which draws a star. 
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+None.
 
 ## REFERENCES:
- < List any outside resources used >
+ None.
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+ None. 
 
 
  

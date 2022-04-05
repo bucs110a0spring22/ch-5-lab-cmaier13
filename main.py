@@ -35,6 +35,7 @@ import time
 darty = turtle.Turtle()
 printer = turtle.Turtle()
 
+
 def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
   darty.penup()
   darty.goto(-1, -1)
@@ -143,6 +144,7 @@ def drawStar(myturtle=None):
     printer.forward(3)
     printer.right(144)
     
+'''takes a turtle argument and uses it to draw a star'''
 
 def montePi(myturtle=None, number_darts=0):
   inside_count = 0
@@ -174,7 +176,6 @@ def main():
 
     #Create window, turtle, set up window as dartboard
     window = turtle.Screen()
-    darty = turtle.Turtle()
     darty.speed(0)  # as fast as it will go!
     setUpDartboard(window, darty)
 
